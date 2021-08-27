@@ -1,0 +1,57 @@
+<!ELEMENT schema (Store)>
+<!ELEMENT Store (Store_Info, Songs)> 
+<!ELEMENT Store_Info (Store_Name, Logo, Address+, Phone+, Website+)>
+<!ELEMENT Store_Name (#PCDATA)>
+<!ELEMENT Logo EMPTY>
+<!ELEMENT Address (Country, City)>
+<!ELEMENT Country (#PCDATA)>
+<!ELEMENT City (#PCDATA)>
+<!ELEMENT Phone (Landline, Mobile)>
+<!ELEMENT Landline (#PCDATA)>
+<!ELEMENT Mobile (#PCDATA)>
+<!ELEMENT Website (URL)>
+<!ELEMENT URL ANY>
+<!ELEMENT Songs (Categories+)>
+<!ELEMENT Categories (genre+)>
+<!ELEMENT genre (Name, (pic1|pic2|pic3|pic4|pic5|pic6|pic7|pic8|pic9|pic10|pic11|pic12|pic13|pic14|pic15)?, singer, song_description+, Quantity*, Price, additional_info+)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT pic1 EMPTY>
+<!ELEMENT pic2 EMPTY>
+<!ELEMENT pic3 EMPTY>
+<!ELEMENT pic4 EMPTY>
+<!ELEMENT pic5 EMPTY>
+<!ELEMENT pic6 EMPTY>
+<!ELEMENT pic7 EMPTY>
+<!ELEMENT pic8 EMPTY>
+<!ELEMENT pic9 EMPTY>
+<!ELEMENT pic10 EMPTY>
+<!ELEMENT pic11 EMPTY>
+<!ELEMENT pic12 EMPTY>
+<!ELEMENT pic13 EMPTY>
+<!ELEMENT pic14 EMPTY>
+<!ELEMENT pic15 EMPTY>
+<!ELEMENT singer (#PCDATA)>
+<!ELEMENT song_description (#PCDATA|b)*>
+<!ELEMENT b (#PCDATA)>
+<!ELEMENT Quantity (#PCDATA|b)*>
+<!ELEMENT Price (#PCDATA|b)*>
+<!ELEMENT additional_info (category+, Released+, Recorded*, Writer+, Producer+)>
+<!ELEMENT category (#PCDATA|b)*>
+<!ELEMENT Released (#PCDATA|b)*>
+<!ELEMENT Recorded (#PCDATA|b)*>
+<!ELEMENT Writer (#PCDATA|b)*>
+<!ELEMENT Producer (#PCDATA|b)*>
+
+
+<!ATTLIST schema xmlns:xsi CDATA #FIXED "http://www.w3.org/2001/XMLSchema-instance">
+<!ATTLIST schema xsi:noNamespaceSchemaLocation CDATA #FIXED "catalog_19031691.xsd">
+<!ATTLIST genre Type NMTOKENS #REQUIRED>
+<!ATTLIST Store_Info type CDATA #FIXED "about">
+<!ATTLIST singer artist CDATA #REQUIRED>
+<!ATTLIST singer id ID #REQUIRED>
+<!ATTLIST singer artist IDREF #IMPLIED>
+<!ATTLIST additional_info location NMTOKEN #REQUIRED>
+
+
+
+

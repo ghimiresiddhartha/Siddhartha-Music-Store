@@ -1,0 +1,200 @@
+
+<!--
+   Author: Siddhartha Ghimire
+   Date:   May 5, 2021
+-->
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Country" type="xs:string"/>
+  <xs:element name="City" type="xs:string"/>
+  <xs:element name="landline" type="xs:string"/>
+  <xs:element name="Mobile" type="xs:string"/>
+  <xs:element name="URL" type="xs:anyURI"/>
+  <xs:element name="Store_Name" type="xs:string"/>
+  <xs:element name="Logo" type="xs:string"/>
+  <xs:element name="b" type="xs:string"/>
+  <xs:element name="Name" type="xs:string"/>
+  <xs:element name="singer" type="xs:string"/>
+  <xs:element name="pic1" type="xs:string"/>
+  <xs:element name="pic2" type="xs:string"/>
+  <xs:element name="pic3" type="xs:string"/>
+  <xs:element name="pic4" type="xs:string"/>
+  <xs:element name="pic5" type="xs:string"/>
+  <xs:element name="pic6" type="xs:string"/>
+  <xs:element name="pic7" type="xs:string"/>
+  <xs:element name="pic8" type="xs:string"/>
+  <xs:element name="pic9" type="xs:string"/>
+  <xs:element name="pic10" type="xs:string"/>
+  <xs:element name="pic11" type="xs:string"/>
+  <xs:element name="pic12" type="xs:string"/>
+  <xs:element name="pic13" type="xs:string"/>
+  <xs:element name="pic14" type="xs:string"/>
+  <xs:element name="pic15" type="xs:string"/>
+  
+  <xs:element name="Address"> <!--Defining element Address from Store_Info section-->
+  	<xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Country"/> <!--refrences from  <xs:element name="Country" type="xs:string"/> -->
+        <xs:element ref="City"/> <!--refrences from <xs:element name="City" type="xs:string"/> -->
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Phone"> <!--Defining element Phone from Store_Info section-->
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="landline"/> <!--refrences from  <xs:element name="landline" type="xs:string"/> -->
+        <xs:element ref="Mobile"/> <!--refrences from  <xs:element name="Mobile" type="xs:string"/> -->
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Website"> <!--Defining element Website from Store_Info section-->
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="URL"/> <!--refrences from <xs:element name="URL" type="xs:string"/> -->
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="category"> <!--Defining element category from additional_info section-->
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="b" minOccurs="0"/> <!--refrences from <xs:element name="b" type="xs:string"/> -->
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Released"> <!--Defining element Released from additional_info section-->
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="b" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Recorded"> <!--Defining element Recorded from additional_info section-->
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="b" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Writer"> <!--Defining element Writer from additional_info section-->
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="b" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Producer"> <!--Defining element Producer from additional_info section-->
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="b" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="song_description"> <!--Defining element song_description from genre section-->
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="b" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Quantity"> <!--Defining element Quantity from genre section-->
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="b" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Price"> <!--Defining element Price from genre section-->
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="b" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="additional_info"> <!--Defining element additional_info from genre section-->
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="category"/> <!--refrences from <xs:element name="category"> -->
+        <xs:element ref="Released"/> <!--refrences from <xs:element name="Released"> -->
+        <xs:element ref="Recorded" minOccurs="0"/> <!--refrences from <xs:element name="Recorded"> -->
+        <xs:element ref="Writer" minOccurs="0"/> <!--refrences from <xs:element name="Writer"> -->
+        <xs:element ref="Producer" minOccurs="0"/> <!--refrences from <xs:element name="Producer"> -->
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="genre"> <!--Defining element genre from Categories section-->
+  	<xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Name"/> <!--refrences from <xs:element name="Name" type="xs:string"/> -->
+        <xs:element ref="pic1" minOccurs="0"/> <!--refrences from <xs:element name="pic1" type="xs:string"/> -->
+        <xs:element ref="pic2" minOccurs="0"/> <!--refrences from <xs:element name="pic2" type="xs:string"/> -->
+        <xs:element ref="pic3" minOccurs="0"/> <!--refrences from <xs:element name="pic3" type="xs:string"/> -->
+        <xs:element ref="pic4" minOccurs="0"/> <!--refrences from <xs:element name="pic4" type="xs:string"/> -->
+        <xs:element ref="pic5" minOccurs="0"/> <!--refrences from <xs:element name="pic5" type="xs:string"/> -->
+        <xs:element ref="pic6" minOccurs="0"/> <!--refrences from <xs:element name="pic6" type="xs:string"/> -->
+        <xs:element ref="pic7" minOccurs="0"/> <!--refrences from <xs:element name="pic7" type="xs:string"/> -->
+        <xs:element ref="pic8" minOccurs="0"/> <!--refrences from <xs:element name="pic8" type="xs:string"/> -->
+        <xs:element ref="pic9" minOccurs="0"/> <!--refrences from <xs:element name="pic9" type="xs:string"/> -->
+        <xs:element ref="pic10" minOccurs="0"/> <!--refrences from <xs:element name="pic10" type="xs:string"/> -->
+        <xs:element ref="pic11" minOccurs="0"/> <!--refrences from <xs:element name="pic11" type="xs:string"/> -->
+        <xs:element ref="pic12" minOccurs="0"/> <!--refrences from <xs:element name="pic12" type="xs:string"/> -->
+        <xs:element ref="pic13" minOccurs="0"/> <!--refrences from <xs:element name="pic13" type="xs:string"/> -->
+        <xs:element ref="pic14" minOccurs="0"/> <!--refrences from <xs:element name="pic14" type="xs:string"/> -->
+        <xs:element ref="pic15" minOccurs="0"/> <!--refrences from <xs:element name="pic15" type="xs:string"/> -->
+        <xs:element ref="singer"/> <!--refrences from <xs:element name="singer" type="xs:string"/> -->
+        <xs:element ref="song_description"/> <!--refrences from <xs:element name="song_description"> -->
+        <xs:element ref="Quantity" minOccurs="0"/> <!--refrences from <xs:element name="Quantity"> -->
+        <xs:element ref="Price"/> <!--refrences from <xs:element name="Price"> -->
+        <xs:element ref="additional_info"/> <!--refrences from <xs:element name="additional_info"> -->
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+<xs:element name="Categories"> <!--Defining element Categories from songs section-->
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="genre" maxOccurs="unbounded" minOccurs="0"/> <!--refrences from <xs:element name="genre"> -->
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+   <xs:element name="Store_Info"> <!--Defining element Store_Info from Store section-->
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Store_Name"/> <!--refrences from <xs:element name="Store_Name" type="xs:string"/> -->
+        <xs:element ref="Logo"/> <!--refrences from <xs:element name="Logo" type="xs:string"/> -->
+        <xs:element ref="Address"/> <!--refrences from <xs:element name="Address"> -->
+        <xs:element ref="Phone"/> <!--refrences from <xs:element name="Phone"> -->
+        <xs:element ref="Website"/> <!--refrences from <xs:element name="Website"> -->
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Songs"> <!--Defining element Songs from Store section-->
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Categories"/> <!--refrences from <xs:element name="Categories"> -->
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Store"> <!--Defining element Songs from schema section-->
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Store_Info"/> <!--refrences from <xs:element name="Store_Info"> -->
+        <xs:element ref="Songs"/> <!--refrences from <xs:element name="Songs"> -->
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
